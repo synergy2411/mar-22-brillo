@@ -91,11 +91,11 @@ Node : Platform -> JS - 25-30MB
 - Executional Phase => performs all assignements and executions
 
 # ES6 / ES2015 - ECMA Community specifications
+- arrow functions
+- destructuring
 - classes
 - extends
 - implments
-- arrow functions
-- destructuring
 - rest and spread operators
 - template literals
 - block scoping

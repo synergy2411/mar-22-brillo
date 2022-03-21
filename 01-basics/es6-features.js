@@ -29,13 +29,13 @@
 //  - Don't have 'arguments' keyword
 
 
-function display(){
-    console.log(arguments);
-}
+// function display(){
+//     console.log(arguments);
+// }
 
-display("email@test.com")
-display("email@test.com", 32)
-display("email@test.com", 32, true)
+// display("email@test.com")
+// display("email@test.com", 32)
+// display("email@test.com", 32, true)
 
 
 
@@ -97,3 +97,82 @@ display("email@test.com", 32, true)
 // }
 
 // a()
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Destructuring - "unpacking" the collection -> array || object
+// - breaks the reference link
+
+// var fruits = ["apple","banana","kiwi", "grapes"];
+
+// var [f1, , f3, f4, f5] = fruits;
+
+// console.log(f3, f5);            // kiwi undefined
+
+// f3 = "oranges";
+
+// fruits[2] = "dragan fruit"
+
+// console.log(fruits);
+
+
+// var ninja = {
+//     name : "King Lui",
+//     isBlackBelt : true
+// }
+
+// var {isBlackBelt : isBB, name : ninjaName} = ninja;
+
+// console.log(ninjaName + " is having BlackBelt ? " + isBB );
+
+
+// var user = {
+//     firstName : "Alice",
+//     lastName :"Doe",
+//     age : 32,
+//     address : {
+//         city : "Bengaluru",
+//         street :"201 Main Road, Marathahalli"
+//     },
+//     friends : ["Jenny", "James"]
+// }
+
+// var {
+//     firstName : fn,
+//     lastName : ln,
+//     age,
+//     address : {
+//         city : ct,
+//         street : st
+//     },
+//     friends : [f1, f2]
+// } = user;
+
+
+var users = [
+    {email : "john@test.com", age : 32},
+    {email : "jenny@test.com", age : 33},
+    {email : "james@test.com", age : 34}
+]
+
+var [
+    {email : e1, age},
+    {email : e2, age},
+    {email : e3, age}
+] = users;
+
+console.log(e2);
+
+// var [f1={email,age},f2={email,age},f3={email,age}] = users;
+
+// console.log(f1)
