@@ -61,6 +61,7 @@ Node : Platform -> JS - 25-30MB
 - denoted by { }
 - consists of Property Key and value pair (key : value)
 - Two properties are separated by Comma (,)
+- Literal, Constructor, Instance
 
 
 # Array -> collection of homogenous elements, based on index, ordered one.
@@ -68,3 +69,23 @@ Node : Platform -> JS - 25-30MB
 # Datatypes in JavaScript
 > Primitive Types : Number, String, Boolean
 > Reference Types : Functions, Objects, Arrays, Date
+
+
+# Functions in JavaScript
+- first class citizens in JavaScript
+- Syntax as well as Value
+
+# Closures : process of binding the outer scope variable to the inner function
+
+
+# JavaScript Engine Execution 
+
+- Synchronous Tasks
+- Asynchronous Tasks
+    : Micro Tasks -> Promises and queueMicrotask()
+    : Macro Tasks
+
+
+# JavaScript Engine runs in two phases
+- Creational Phase => allocates the memory
+- Executional Phase => performs all assignements and executions
