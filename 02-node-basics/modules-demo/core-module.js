@@ -59,16 +59,24 @@ const todos = [
 
 const requestListener = (request, response) => {
 
-  switch (request.url) {
-    case "/books": {
+  switch (request.url) {            // /
+    case "/image": {                // localhost:9000/image
+        fs.readFile("./files/img.jpeg")
+        .then(content => {
+            response.setHeader("Content-Type", "image/jpeg");
+            return response.end(content);
+        }).catch(err=>console.log(err))
+        break;
+    }
+    case "/books": {                // localhost:9000/books
       response.setHeader("Content-Type", "application/json");
       return response.end(JSON.stringify(books));
     }
-    case "/todos": {
+    case "/todos": {                // localhost:9000/todos
       response.setHeader("Content-Type", "application/json");
       return response.end(JSON.stringify(todos));
     }
-    default: {
+    default: {                  // localhost:9000 -> HTML file
       response.setHeader("Content-Type", "text/html");
       response.writeHead(200);
       fs.readFile("./files/index.html")
