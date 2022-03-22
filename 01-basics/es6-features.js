@@ -313,13 +313,118 @@
 // console.log(john.getDetails())
 
 
-const {sum, mul} = require("./maths");
-const fn = require("./fortune");
+// const {sum, mul} = require("./maths");
+// const fn = require("./fortune");
 
-console.log("Sum : ", sum(2,7))
-console.log("Mul : ", mul(2,7))
+// console.log("Sum : ", sum(2,7))
+// console.log("Mul : ", mul(2,7))
 
-const {message, luckyNumber} = fn()
+// const {message, luckyNumber} = fn()
 
-console.log("Today's Fortune : ", message)
-console.log("Today's lucku number : ", luckyNumber)
+// console.log("Today's Fortune : ", message)
+// console.log("Today's lucku number : ", luckyNumber)
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Map : stores key-value pair; Iterator
+
+// const map = new Map();
+
+// let user = { name : "jenny"}
+
+// map.set("name", "John Doe");
+// map.set(true, "isAdmin");
+// map.set(123, "address");
+// map.set(user, "Friend")
+
+// for(let key of map.keys()){
+//     console.log(`KEY METHOD : ${key} : ${map.get(key)}`)
+// }
+// for(let values of map.values()){
+//     console.log(values)
+// }
+
+// for(let [key,value] of map.entries()){
+//     console.log(`${key} : ${value}`)
+// }
+
+
+// let user = {
+//     "name" : "john",
+//     123 : true,
+//     false : isAdmin,
+//     {} : "username"
+// }
+
+
+
+// Set : stores the unique values
+// let set = new Set();
+
+// set.add("John")
+// set.add("Jenny")
+// set.add("James")
+// set.add("Alice")
+// set.add("Alice")
+
+// console.log("Set Size : ", set.size);
+
+
+
+
+
+
+
+
+
+
+// Promise : to handle async data
+// - handshake between the producer code and the consumer code
+// - States -> Pending -> Resolved / SUCCESS -> Rejected / FAILURE
+// - Results -> undefined -> Response -> Error
+// - Consume the Promise -> .then(response).catch(errpr) | Async...await
+
+const producer = (ms) => {
+    const promise = new Promise((resolve, reject)=>{
+        if(ms < 3000){
+            setTimeout(()=>{
+                resolve({message : "SUCCESS"})
+            }, ms);
+        }else{
+            reject(new Error("Waiting too long..."))
+        }
+    });
+    return promise;
+}
+
+console.log("PROGRAM START")
+const consumer = async () => {
+    try{
+        console.log("Start")
+        const response = await producer(2000);
+        console.log("RESOLVED : ", response)
+        console.log("End");
+    }catch(err){
+        console.log("ERROR -> ", err)
+    }
+}
+console.log("PROGRAM END")
+// const consumer = () => {
+//     producer(4000)
+//         .then((response) => {
+//             console.log(response)
+//         })
+//         .catch((error) => {console.log(error)})
+// }
+
+consumer();

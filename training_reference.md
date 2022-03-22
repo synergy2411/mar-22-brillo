@@ -101,3 +101,15 @@ Node : Platform -> JS - 25-30MB
 - block scoping
 - map / set
 - promises
+
+
+# Module System
+- CommonJS > NodeJS App
+- ES6 Module > Browsers
+- AMD Module > Additional configuration
+
+
+# Handling JavaScript Async behaviour-
+- Callbacks
+- Promise
+- Observable API
