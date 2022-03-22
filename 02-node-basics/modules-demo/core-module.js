@@ -8,7 +8,6 @@
 
 // console.log("Number of CPU's : ", os.cpus().length);
 
-
 // const path = require("path");
 
 // const url = "http://www.example.com/public/index.html";
@@ -27,11 +26,9 @@
 //     console.log("ASYNC READ -> ", data.toString());
 // })
 
-
 // const content = fs.readFileSync("./files/demo.md");
 
 // console.log("Sync Data -> ", content.toString());           // Buffer Data
-
 
 // const fs = require("fs").promises;
 
@@ -44,37 +41,47 @@
 //     })
 //     .catch(console.log)
 
-
-
-
-
 const http = require("http");
 const fs = require("fs").promises;
 
+const books = [{
+    isbn : 987654,
+    title : "You can win"
+}, {
+    isbn : 65432,
+    title : "The Awesome Book"
+}]
+
+const todos = [
+    {label : "planting", status : false},
+    {label : "insurance", status : true},
+]
+
 const requestListener = (request, response) => {
 
-    // response.setHeader("Content-Type", "application/json")
-    response.setHeader("Content-Type", "text/html")
-    response.writeHead(200);
-    // response.end("Hello from Server")
-    // response.end(JSON.stringify({message : "SUCCESS"}))
-    
-    fs.readFile("./files/index.html")
-        .then(content => {
-            response.end(content)
-        }).catch(erro => {
-            response.end("<p>Error Occured</p>")
+  switch (request.url) {
+    case "/books": {
+      response.setHeader("Content-Type", "application/json");
+      return response.end(JSON.stringify(books));
+    }
+    case "/todos": {
+      response.setHeader("Content-Type", "application/json");
+      return response.end(JSON.stringify(todos));
+    }
+    default: {
+      response.setHeader("Content-Type", "text/html");
+      response.writeHead(200);
+      fs.readFile("./files/index.html")
+        .then((content) => {
+            return response.end(content);
         })
-
-}
+        .catch((err) => {
+            return response.end(`<p>Error Occured - ${err}</p>`);
+        });
+    }
+  }
+};
 
 const server = http.createServer(requestListener);
 
-server.listen(9000, () => console.log("HTTP Server started at PORT : 9000"))
-
-
-
-
-
-
-
+server.listen(9000, () => console.log("HTTP Server started at PORT : 9000"));

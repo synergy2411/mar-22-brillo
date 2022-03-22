@@ -119,3 +119,7 @@ Node : Platform -> JS - 25-30MB
 -> Node Runtime Environment (V8 Engine execute JavaScript Code) > node fileName.js
 -> Node Package Manager (npm) -> dependecy manager for NodeJS projects
 -> Node Core Modules
+
+# nodemon : restart the server automatically, whenever the file is saved
+> npm install nodemon -g
+> nodemon core-module.js
