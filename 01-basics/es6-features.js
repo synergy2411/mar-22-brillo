@@ -394,37 +394,42 @@
 // - Results -> undefined -> Response -> Error
 // - Consume the Promise -> .then(response).catch(errpr) | Async...await
 
-const producer = (ms) => {
-    const promise = new Promise((resolve, reject)=>{
-        if(ms < 3000){
-            setTimeout(()=>{
-                resolve({message : "SUCCESS"})
-            }, ms);
-        }else{
-            reject(new Error("Waiting too long..."))
-        }
-    });
-    return promise;
-}
-
-console.log("PROGRAM START")
-const consumer = async () => {
-    try{
-        console.log("Start")
-        const response = await producer(2000);
-        console.log("RESOLVED : ", response)
-        console.log("End");
-    }catch(err){
-        console.log("ERROR -> ", err)
-    }
-}
-console.log("PROGRAM END")
-// const consumer = () => {
-//     producer(4000)
-//         .then((response) => {
-//             console.log(response)
-//         })
-//         .catch((error) => {console.log(error)})
+// const producer = (ms) => {
+//     const promise = new Promise((resolve, reject)=>{
+//         if(ms < 3000){
+//             setTimeout(()=>{
+//                 resolve({message : "SUCCESS"})
+//             }, ms);
+//         }else{
+//             reject(new Error("Waiting too long..."))
+//         }
+//     });
+//     return promise;
 // }
 
-consumer();
+// console.log("PROGRAM START")
+// const consumer = async () => {
+//     try{
+//         console.log("Start")
+//         const response = await producer(2000);
+//         console.log("RESOLVED : ", response)
+//         console.log("End");
+//     }catch(err){
+//         console.log("ERROR -> ", err)
+//     }
+// }
+// console.log("PROGRAM END")
+// // const consumer = () => {
+// //     producer(4000)
+// //         .then((response) => {
+// //             console.log(response)
+// //         })
+// //         .catch((error) => {console.log(error)})
+// // }
+
+// consumer();
+
+
+
+// Promise.resolve("Data").then(result=>console.log(result))
+// Promise.reject(new Error('Something went wrong')).catch(err => console.log(err))

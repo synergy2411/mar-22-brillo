@@ -68,24 +68,25 @@
 
 
 
-// function sayHello(arr, cb){
-//     setTimeout(function(){
-//         if(arr.length > 2){
-//             cb(null, "Good Morning");
-//         }else{
-//             cb(new Error("Too low values"))
-//         }
-//     }, 3000)
-// }
+function sayHello(arr, cb){
+    setTimeout(function(){
+        if(arr.length > 2){
+            // Make remote Server
+            cb(null, "Good Morning");
+        }else{
+            cb(new Error("Too low values"))
+        }
+    }, 3000)
+}
 
-// console.log("Start")
-// sayHello([2,3,4,5], function(err, message){
-//     if(err){
-//         return console.log(err);
-//     }
-//     console.log(message)
-// })
-// console.log("End");
+console.log("Start")
+sayHello([2,3,4,5], function(err, message){
+    if(err){
+        return console.log(err);
+    }
+    console.log(message)
+})
+console.log("End");
 
 // Start -> wait 3 seconds -> Good Morning -> End
 // Start -> End -> Wait... -> Good Morning

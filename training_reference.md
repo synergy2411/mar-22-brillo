@@ -113,3 +113,9 @@ Node : Platform -> JS - 25-30MB
 - Callbacks
 - Promise
 - Observable API
+
+
+# Node installer comes with -
+-> Node Runtime Environment (V8 Engine execute JavaScript Code) > node fileName.js
+-> Node Package Manager (npm) -> dependecy manager for NodeJS projects
+-> Node Core Modules
