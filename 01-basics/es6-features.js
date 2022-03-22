@@ -159,20 +159,167 @@
 // } = user;
 
 
-var users = [
-    {email : "john@test.com", age : 32},
-    {email : "jenny@test.com", age : 33},
-    {email : "james@test.com", age : 34}
-]
+// var users = [
+//     {email : "john@test.com", age : 32},
+//     {email : "jenny@test.com", age : 33},
+//     {email : "james@test.com", age : 34}
+// ]
 
-var [
-    {email : e1, age},
-    {email : e2, age},
-    {email : e3, age}
-] = users;
+// var [
+//     {email : e1, age},
+//     {email : e2, age},
+//     {email : e3, age}
+// ] = users;
 
-console.log(e2);
+// console.log(e2);
 
 // var [f1={email,age},f2={email,age},f3={email,age}] = users;
 
 // console.log(f1)
+
+
+
+
+
+
+
+
+
+
+// Spread and Rest Operator (...)
+// Rest - creates the collection; always present in function argument; last parameter in function argument;
+// Spread - splits the collection
+
+
+// REST
+// function demo(email, age, ...args){
+//     console.log(args[0]);       // ?   
+// }
+
+// // demo("test@test.com")
+// // demo("test@test.com", 32)
+// demo("test@test.com", 32, true)
+
+// SPREAD
+// var fruits = ["apple", "banana", "guava"];
+// var vegAndFruits = ["Peas", "Tomato", ...fruits];
+
+// console.log(vegAndFruits);          // ["Peas", "Tomoto", ["apple", "banana", "guava"]]
+
+// var userOne = {
+//     email : "john@test.com",
+//     isAdmin : false
+// }
+
+// var userTwo = {
+//     ...userOne,              // {email, isAdmin}
+//     age : 32,
+//     email : "jenny@test.com"
+// }
+
+// console.log(userTwo);
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Block Scope Variables - restricts the scope of variables to the nearest block (if, else, for, while -> {})
+// - let : for other variables
+// - const : for creating constants
+
+// function demo(arr){
+//     // var LAOD = undefined;
+//     // var FLASH = undefined;
+//     if(arr.length > 2){
+//         let LOAD = "LOADING"
+//         console.log(FLASH);         // ?
+//     }else{
+//         let FLASH = "FLASHING"
+//     }
+// }
+
+// demo([2,3,4,5]);
+
+
+// const username = "John Doe";
+
+// username = "Jenny Doe";
+
+// const user = {                      // xxx0oi98j87y ---> { name : "John Doe" }
+//     name : "John Doe"
+// }
+
+// user.name = "Jenny Doe";            // xxx0oi98j87y ---> { name : "Jenny Doe" }
+
+// console.log(user);
+
+// user = {                            // xxx0987yu7yu
+//     name : "Alice Doe"
+// }
+
+
+
+// const fruits = ["apple","guava", "banana"];
+
+// fruits.push("kiwi");
+
+// fruits = []             // ERROR
+
+// console.log(fruits);
+
+
+
+
+
+
+// Template Literals -> "" | '' | `` (back tick)
+// - Embed variables within strings without (+)
+// - Multiline strings without (\n)
+
+
+// let username = "John Deo";
+// let age = 32;
+// let helloString = `
+// Hello from ${username}!
+// I'm ${age} years old.
+// `
+
+// console.log(helloString);
+
+
+
+
+// Class
+// class Student{
+//     constructor(studId, name, age){
+//         this.studId = studId;
+//         this.age = age;
+//         this.name = name;
+//     }
+//     getDetails(){
+//         return `Student ID : ${this.studId}, Name : ${this.name}, Age : ${this.age}`;
+//     }
+// }
+
+// let john = new Student("S001", "John Doe", 32);
+// console.log(john.getDetails())
+
+
+const {sum, mul} = require("./maths");
+const fn = require("./fortune");
+
+console.log("Sum : ", sum(2,7))
+console.log("Mul : ", mul(2,7))
+
+const {message, luckyNumber} = fn()
+
+console.log("Today's Fortune : ", message)
+console.log("Today's lucku number : ", luckyNumber)
