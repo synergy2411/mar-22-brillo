@@ -1,1 +1,5 @@
-[{"title":"shopping","body":"to buy new T-shirt"},{"title":"insurance","body":"to renew car insurance"},{"title":"insurance","body":"to renew car insurance"},{"title":"insurance","body":"to renew car insurance"}]
+[
+  { "title": "shopping", "body": "to buy new T-shirt" },
+  { "title": "insurance", "body": "to renew car insurance" },
+  { "title": "grocery", "body": "to buy some pulses" }
+]

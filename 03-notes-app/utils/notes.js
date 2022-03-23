@@ -18,8 +18,13 @@ const saveNotes = (notes) => {
 
 const addNote = (title, body) => {
     const allNotes = loadNotes();
-    allNotes.push({title, body});
-    saveNotes(allNotes);
+    const position = allNotes.findIndex(note => note.title === title)
+    if(position >= 0){
+        console.log("Note already exist. Try again!".red)
+    }else{
+        allNotes.push({title, body});
+        saveNotes(allNotes);
+    }
 }
 
 module.exports = {
