@@ -123,3 +123,33 @@ Node : Platform -> JS - 25-30MB
 # nodemon : restart the server automatically, whenever the file is saved
 > npm install nodemon -g
 > nodemon core-module.js
+
+
+
+
+# What is NodeJS?
+- Platform
+- Fast
+- Single Threaded
+- Scalable 
+- Open Source
+- Asynchronous
+- Event-driven
+- Real-time App
+- Data Intensive task
+- Dynamic Web Apps
+
+# Modules
+- Core -> e.g file system, http, path, os etc
+- File -> maths.js, fortune.js
+- External -> colors, yargs etc
+
+
+# package.json -> meta info about the project
+> npm init
+
+# Notes App
+> node index.js add --title="New Title" --body="New Title Body"
+> node index.js read --title="Some Title"
+> node index.js remove --title="Some Title"
+> node index.js list

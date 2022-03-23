@@ -1,0 +1,15 @@
+{
+  "name": "03-notes-app",
+  "version": "1.0.0",
+  "description": "My Awesome Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SumitK",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "yargs": "^17.4.0"
+  }
+}
