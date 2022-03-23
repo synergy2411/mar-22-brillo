@@ -4,6 +4,8 @@ const colors = require("colors");
 const loadNotes = () => {
     try{
         const contents = fs.readFileSync("./db/data.json")
+        // const contents = fs.readFile("./db/data.json", ())
+        // const contents = fs.readFile("./db/data.json")
         const notesString = contents.toString()
         return JSON.parse(notesString);
     }catch(err){
@@ -21,6 +23,7 @@ const saveNotes = (notes, flag) => {
 }
 
 const addNote = (title, body) => {
+    // console.log(title, body)
     const allNotes = loadNotes();
     const position = allNotes.findIndex(note => note.title === title)
     if(position >= 0){
