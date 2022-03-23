@@ -146,7 +146,8 @@ Node : Platform -> JS - 25-30MB
 
 
 # package.json -> meta info about the project
-> npm init
+> npm init [-y]
+> npm i yargs colors
 
 # Notes App
 > node index.js add --title="New Title" --body="New Title Body"
