@@ -1,5 +1,6 @@
 const color = require("colors");
 const yargs = require("yargs");
+const  { square, add, mul } = require("sk-npm-basics")
 
 const { add } = require("./utils")
 

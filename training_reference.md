@@ -154,3 +154,27 @@ Node : Platform -> JS - 25-30MB
 > node index.js read --title="Some Title"
 > node index.js remove --title="Some Title"
 > node index.js list
+
+
+# NPM Commands (Commonly used) -
+- npm init [-y]
+- npm install [packageName] [-g]
+- npm outdated
+- npm update
+- npm config get/set 
+- npm config get registry
+- npm adduser
+- npm publish
+- npm ls --depth 0 [-g]
+
+
+# Semantic Versioning -> X.Y.Z (semver.org)
+- X : Major Version : add new features ; NOT compatible with existing code
+- Y : Minor Version : add new features ; compatible with existing code
+- Z : Patch Version : bug fixes, patch in app
+
+Colors -> 1.4.0 -> 1.4.1
+Colors -> 1.4.0 -> 1.5.0
+Colors -> 1.4.0 -> 2.0.0
+
+# Events are PubSub pattern
