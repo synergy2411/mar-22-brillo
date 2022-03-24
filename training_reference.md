@@ -209,7 +209,12 @@ Colors -> 1.4.0 -> 2.0.0
 # REST (REpresentational State Transfer) Endpoints
 - GET : fetch the data
     /api/todos -> fetching all todo items
+    // GET -> http://localhost:9001/api/todos
+    // GET -> http://localhost:9001/api/todos/{todoId}
 - POST : create the data
     /api/todos -> create the new todo item
+    // POST -> http://localhost:9001/api/todos + Request Body
 - PATCH / PUT : updating the data
+    // UPDATE -> http://localhost:9001/api/todos/{todoId} + Request Body
 - DELETE : delete the data
+// DELETE -> http://localhost:9001/api/todos/{todoId}

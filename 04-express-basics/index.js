@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 app.use(express.json());            // parse the req body
 
-const todos = [
+let todos = [
     {id : "t001", label : "grocery", status : false},
     {id : "t002", label : "shopping", status : true},
     {id : "t003", label : "insurance", status : false},
@@ -62,9 +62,27 @@ app.post("/api/todos", (req, res) => {
 })
 
 
-// GET -> http://localhost:9001/api/todos
+// http://localhost:9001/api/todos?sortby=label
+
+// GET -> http://localhost:9001/api/todos?limit=3
 app.get("/api/todos", (req, res) => {
-    res.send(todos)
+    // console.log(req.query)               // to receive query parameter
+    const { limit, sortby } = req.query;
+    if(sortby){
+        todos = todos.sort((a,b)=>{
+            let firstEl = a[sortby];
+            let secondEl = b[sortby];
+            if(firstEl < secondEl) return -1
+            if(firstEl > secondEl) return 1
+            return 0
+        })
+    }
+    if(limit){
+        const limitedTodos = todos.filter((todo, index) => index < Number(limit))
+        return res.send(limitedTodos);
+    }else{
+        res.send(todos)
+    }
 })
 
 // http://localhost:9001/
