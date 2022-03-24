@@ -240,3 +240,15 @@ Colors -> 1.4.0 -> 2.0.0
 - NoSQL Database
 - Can store huge amount of data
 - stores data in JSON format
+
+
+- mongod
+- mongo
+- use brillio-db
+- CREATE
+- FIND
+- UPDATE
+- DELETE
+
+
+insertMany([{},{},{}])
