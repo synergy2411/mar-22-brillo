@@ -178,3 +178,38 @@ Colors -> 1.4.0 -> 1.5.0
 Colors -> 1.4.0 -> 2.0.0
 
 # Events are PubSub pattern
+- emit()
+- on()
+
+# Stream -> Communication channel on which data transfer happened in the form of buffer (chunk / bytes)
+- Readable
+- Writable
+- Transform
+- Duplex
+
+
+# Express
+> npm init -y
+> npm install express@4.17.3
+> npm install nodemon -g
+> nodemon index.js
+
+# MongoDB
+
+/playground/04-express-basics> 
+
+/training>cd 04-express-basics
+
+/training/04-express-basics> npm init -y
+/training/04-express-basics> npm i express
+/training/04-express-basics> dir
+/training/04-express-basics> nodemon index.js
+
+
+# REST (REpresentational State Transfer) Endpoints
+- GET : fetch the data
+    /api/todos -> fetching all todo items
+- POST : create the data
+    /api/todos -> create the new todo item
+- PATCH / PUT : updating the data
+- DELETE : delete the data
