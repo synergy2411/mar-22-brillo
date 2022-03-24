@@ -1,58 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Document</title>
-</head>
-<body>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
     <h1>My Awesome App</h1>
     <button id="btnFetchTodos">Get all Todos</button>
 
-    <br>
-    <br>
+    <br />
+    <br />
 
     <form>
-        <input type="text" placeholder="Enter item" id="txtTodo"> 
-        <button type="button" id="btnAddTodo">Add Item</button>
+      <input type="text" placeholder="Enter item" id="txtTodo" />
+      <button type="button" id="btnAddTodo">Add Item</button>
     </form>
 
-    <hr>
+    <hr />
     <ul id="todo-list"></ul>
 
-    <script>
-        const btnFetchTodos = document.getElementById("btnFetchTodos");
-        const todoList = document.getElementById("todo-list")
-        const btnAddTodo = document.getElementById("btnAddTodo")
-        const txtTodo = document.getElementById("txtTodo");
-
-        const fetchTodos = () => {
-            todoList.innerHTML = '';
-            fetch("http://localhost:9001/api/todos")
-                .then(response => response.json())
-                .then(result => {
-                    result.forEach((todo) => {
-                        const li = document.createElement("li")
-                        li.innerHTML = `${todo.label.toUpperCase()}`
-                        todoList.append(li);
-                    })
-                }).catch(console.log)
-        }
-
-        btnAddTodo.addEventListener("click", event => {
-            fetch("/api/todos", {
-                method : "POST",
-                body : JSON.stringify({label : txtTodo.value}),
-                headers : {
-                    "Content-type" : "application/json"
-                }
-            }).then(response => response.json())
-                .then(result => {
-                    fetchTodos()
-                }).catch(console.log)
-        })
-
-        btnFetchTodos.addEventListener("click", event => {
-            fetchTodos();
-        })
-    </script>
-</body>
+    <script src="./app.js"></script>
+  </body>
 </html>

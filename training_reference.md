@@ -218,3 +218,25 @@ Colors -> 1.4.0 -> 2.0.0
     // UPDATE -> http://localhost:9001/api/todos/{todoId} + Request Body
 - DELETE : delete the data
 // DELETE -> http://localhost:9001/api/todos/{todoId}
+
+
+# Express
+- Sending text content
+- Sending JSON content
+- Sending HTML File
+
+- REST Endpoints
+> GET
+> POST
+> PATCH
+> DELETE
+
+- Access the Route Parameter
+- Access the QueryString
+- Access the Request Body
+
+
+# What is MongoDB?
+- NoSQL Database
+- Can store huge amount of data
+- stores data in JSON format

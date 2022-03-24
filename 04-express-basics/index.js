@@ -2,6 +2,7 @@ const express = require("express");
 
 const app = express();
 app.use(express.json());            // parse the req body
+app.use(express.static(__dirname + "/public"))
 
 let todos = [
     {id : "t001", label : "grocery", status : false},
