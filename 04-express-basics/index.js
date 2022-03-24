@@ -62,6 +62,8 @@ app.post("/api/todos", (req, res) => {
 })
 
 
+// http://localhost:9001/api/todos?sortby=label&limit=3
+
 // http://localhost:9001/api/todos?sortby=label
 
 // GET -> http://localhost:9001/api/todos?limit=3
