@@ -11,6 +11,44 @@ const todos = [
 ]
 
 
+// UPDATE -> http://localhost:9001/api/todos/{todoId}
+app.patch("/api/todos/:todoId", (req, res) => {
+    const {todoId} = req.params;
+    const position = todos.findIndex(todo => todo.id === todoId)
+    if(position >= 0){
+        todos[position] = {...todos[position], ...req.body};            // {label, status}
+        return res.send({...todos[position]});
+    }else{
+        return res.send({err : "Item not found for ID -> " + todoId})
+    }
+})
+
+
+// DELETE -> http://localhost:9001/api/todos/{todoId}
+app.delete("/api/todos/:todoId", (req, res) => {
+    const {todoId} = req.params;
+    const position = todos.findIndex(todo => todo.id === todoId);
+    if(position >= 0){
+        todos.splice(position, 1);
+        return res.send({message : "item deleted for ID -> " + todoId})
+    }else{
+        return res.send({err : "Item not found for ID -> " + todoId})
+    }
+})
+
+
+// GET -> http://localhost:9001/api/todos/{todoId}
+app.get("/api/todos/:todoId", (req, res) => {
+    const { todoId } = req.params;
+    const foundItem = todos.find(todo => todo.id === todoId)
+    if(foundItem){
+        return res.send(foundItem)
+    }else{
+        return res.send({err : "Todo item notfound for ID -> " + todoId});
+    }
+})
+
+
 // POST -> http://localhost:9001/api/todos
 app.post("/api/todos", (req, res) => {
     // console.log(req.body);          // Reading request body
