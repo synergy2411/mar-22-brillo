@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>My Awesome App</h1>
+    <button id="btnFetchTodos">Get all Todos</button>
+
+    <hr>
+    <ul id="todo-list"></ul>
+
+    <script>
+        const btnFetchTodos = document.getElementById("btnFetchTodos");
+        const todoList = document.getElementById("todo-list")
+
+        btnFetchTodos.addEventListener("click", event => {
+            fetch("http://localhost:9001/api/todos")
+                .then(response => response.json())
+                .then(result => {
+                    result.forEach((todo) => {
+                        const li = document.createElement("li")
+                        li.innerHTML = `${todo.label.toUpperCase()}`
+                        todoList.append(li);
+                    })
+                }).catch(console.log)
+        })
+    </script>
+</body>
+</html>

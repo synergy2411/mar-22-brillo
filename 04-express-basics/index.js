@@ -7,6 +7,7 @@ let todos = [
     {id : "t001", label : "grocery", status : false},
     {id : "t002", label : "shopping", status : true},
     {id : "t003", label : "insurance", status : false},
+    {id : "t005", label : "plants", status : true},
     {id : "t004", label : "planting", status : true},
 ]
 
@@ -69,7 +70,12 @@ app.post("/api/todos", (req, res) => {
 // GET -> http://localhost:9001/api/todos?limit=3
 app.get("/api/todos", (req, res) => {
     // console.log(req.query)               // to receive query parameter
-    const { limit, sortby } = req.query;
+    const { limit, sortby, search } = req.query;
+
+    if(search){
+        todos = todos.filter(todo => todo.label.split('')[0] === search)
+    }
+
     if(sortby){
         todos = todos.sort((a,b)=>{
             let firstEl = a[sortby];
@@ -89,7 +95,8 @@ app.get("/api/todos", (req, res) => {
 
 // http://localhost:9001/
 app.get("/", (req, res) => {
-    res.send("Hello client!!!!")
+    // res.send("Hello client!!!!")
+    res.sendFile(__dirname + "/public/index.html")
 })
 
 app.listen(9001, () => console.log("Express server running on PORT : 9001"));
