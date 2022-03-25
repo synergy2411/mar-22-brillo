@@ -3,6 +3,26 @@ const bcrypt = require("bcryptjs");
 
 const getUsers = () => {};
 
+const onUserLogin = async (req, res) => {
+    const {email, password} = req.body;
+    try{
+        const foundUser = await UserModel.findOne({email})
+        if(foundUser){
+            const isMatch = await bcrypt.compare(password, foundUser.password)
+            if(isMatch){
+                return res.send({message : "Authenticated"})
+            }else{
+                return res.send({message : "Authentication Failed"})
+            }
+        }else{
+            return res.send({message : "User NOT found"})
+        }
+    }catch(err) {
+        console.log(err)
+        return res.send({err})
+    }
+};
+
 const createUser = async (req, res) => {
   try {
     const { password } = req.body;
@@ -18,4 +38,5 @@ const createUser = async (req, res) => {
 module.exports = {
   getUsers,
   createUser,
+  onUserLogin
 };
