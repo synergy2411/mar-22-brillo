@@ -251,4 +251,10 @@ Colors -> 1.4.0 -> 2.0.0
 - DELETE
 
 
-insertMany([{},{},{}])
+# Node App with MongoDB
+-> npm i mongodb
+
+# Mongoose Library -> ORM / ODM
+- Schema based solution
+- Validation
+- Business logic hooks
