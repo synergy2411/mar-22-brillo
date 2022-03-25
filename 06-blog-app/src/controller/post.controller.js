@@ -25,6 +25,17 @@ const fetchPost = (req, res) => {
         }).catch(err => res.send({err}))
 }
 
+const deletePost = (req, res) => {
+    const { postId } = req.params;
+    PostModel.findByIdAndDelete(postId)
+        .then(result => res.send(result))
+        .catch(err => res.send({err}))
+}
+
+const updatePost = (req, res) => {
+
+}
+
 module.exports = {
-    createPost, fetchAllPosts, fetchPost
+    createPost, fetchAllPosts, fetchPost, deletePost, updatePost
 }
