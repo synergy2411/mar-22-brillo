@@ -33,7 +33,10 @@ const deletePost = (req, res) => {
 }
 
 const updatePost = (req, res) => {
-
+    const { postId } = req.params;
+    PostModel.findByIdAndUpdate(postId,{...req.body})
+        .then(result => res.send(result))
+        .catch(err => res.send({err}))
 }
 
 module.exports = {
