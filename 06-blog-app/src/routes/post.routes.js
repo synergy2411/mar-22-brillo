@@ -1,23 +1,12 @@
 const express = require("express");
-const PostModel = require("../model/post.model");
+const { createPost, fetchAllPosts, fetchPost } = require("../controller/post.controller");
 
 const PostRouter = express.Router();
 
 PostRouter.route("/")       // http://localhost:9090/api/posts
-    .get((req, res) => {
-        PostModel.find()
-        .then(docs => {
-            return res.send(docs)
-        }).catch(console.log)
-    })
-    .post((req, res) => {
-        const post = new PostModel(req.body);
-        post.save()
-            .then(result => {
-                return res.send(result);
-            }).catch(err=> {
-                return res.send({err})
-            })
-    })
+    .get(fetchAllPosts)
+    .post(createPost)
+PostRouter.route("/:postId")        // http://localhost:9090/api/posts/:postId
+    .get(fetchPost)
 
 module.exports = PostRouter;
