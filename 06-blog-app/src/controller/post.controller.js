@@ -27,7 +27,8 @@ const fetchPost = (req, res) => {
 
 const deletePost = (req, res) => {
     const { postId } = req.params;
-    PostModel.findByIdAndDelete(postId)
+    PostModel.deleteOne({_id : postId})
+    // PostModel.findByIdAndRemove(postId)
         .then(result => res.send(result))
         .catch(err => res.send({err}))
 }

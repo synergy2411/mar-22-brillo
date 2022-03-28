@@ -47,6 +47,13 @@ userSchema.post("save", () => {
     console.log("Post saving the data")
 })
 
+userSchema.pre("remove", function(){
+    console.log("Pre - remove")
+})
+userSchema.post("remove", function(){
+    console.log("Post - remove")
+})
+
 const UserModel = model("User", userSchema);
 
 module.exports = UserModel;
