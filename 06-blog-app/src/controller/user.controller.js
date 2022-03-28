@@ -29,6 +29,7 @@ const createUser = async (req, res) => {
     // const hashedPassword = await bcrypt.hash(password, 12);
     // const user = new UserModel({ ...req.body, password: hashedPassword });
     const user = new UserModel(req.body)
+    user.logger();
     const createdUser = await user.save();
     return res.send(createdUser);
   } catch (err) {
