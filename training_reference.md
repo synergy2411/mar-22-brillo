@@ -259,3 +259,25 @@ Colors -> 1.4.0 -> 2.0.0
 - Validation
 - Business logic hooks
  : pre & post -> save, validate, init, remove
+
+
+
+One to One Relationship
+-> One Book can be written by One Author
+-> One medical summary belongs to One Patient only
+
+One to Many
+-> One trainer can train Many students
+-> One City can have Many Citizens
+
+Many to One
+-> Many students can enroll in One Course
+
+
+Many to Many
+-> Many Customers can buy Many Products
+
+
+Book (1) -> Author (1)
+
+Author(1) -> Books(Many)

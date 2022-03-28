@@ -8,6 +8,10 @@ const authorSchema = new Schema({
   age: {
     type: Schema.Types.Number,
   },
+  books : [{
+    type : Schema.Types.ObjectId,
+    ref : "Book"
+  }]
 });
 
 const AuthorModel = model("Author", authorSchema);

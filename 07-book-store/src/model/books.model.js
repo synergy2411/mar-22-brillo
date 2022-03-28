@@ -15,6 +15,6 @@ const booksSchema = new Schema({
     }
 })
 
-const BookModel = model("books", booksSchema);
+const BookModel = model("Book", booksSchema);
 
 module.exports = BookModel;

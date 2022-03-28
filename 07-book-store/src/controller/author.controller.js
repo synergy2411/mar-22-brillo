@@ -2,7 +2,7 @@ const AuthorModel = require("../model/author.model");
 
 const getAllAuthors = async (req, res) => {
     try{
-        const allAuthors = await AuthorModel.find();
+        const allAuthors = await AuthorModel.find().populate("books");
         return res.send(allAuthors);
     }catch(err){
         console.log(err);
