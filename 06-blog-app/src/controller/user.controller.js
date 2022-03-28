@@ -8,8 +8,8 @@ const onUserLogin = async (req, res) => {
     try{
         const foundUser = await UserModel.findOne({email})
         if(foundUser){
-            const isMatch = await bcrypt.compare(password, foundUser.password)
-            if(isMatch){
+            // const isMatch = await bcrypt.compare(password, foundUser.password)
+            if(UserModel.verifyPassword(password)){
                 return res.send({message : "Authenticated"})
             }else{
                 return res.send({message : "Authentication Failed"})

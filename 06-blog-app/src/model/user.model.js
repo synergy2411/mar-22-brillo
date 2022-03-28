@@ -37,6 +37,11 @@ const userSchema = new Schema({
     versionKey : false
 })
 
+userSchema.statics.verifyPassword = async function(password){
+    const isMatch = await bcrypt.compare(password, this.password)
+    return isMatch;
+}
+
 userSchema.pre("save", async function(next) {
     const hashedPassword = await bcrypt.hash(this.password, 12);
     this.password = hashedPassword;
