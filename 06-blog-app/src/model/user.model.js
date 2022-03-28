@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 const userSchema = new Schema({
     username : {
@@ -32,6 +33,18 @@ const userSchema = new Schema({
         enum : ['Employee', "Admin", "User"],
         default : "Employee"
     }
+},{
+    versionKey : false
+})
+
+userSchema.pre("save", async function(next) {
+    const hashedPassword = await bcrypt.hash(this.password, 12);
+    this.password = hashedPassword;
+    next()
+})
+
+userSchema.post("save", () => {
+    console.log("Post saving the data")
 })
 
 const UserModel = model("User", userSchema);

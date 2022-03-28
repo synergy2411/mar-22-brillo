@@ -258,3 +258,4 @@ Colors -> 1.4.0 -> 2.0.0
 - Schema based solution
 - Validation
 - Business logic hooks
+ : pre & post -> save, validate, init, remove

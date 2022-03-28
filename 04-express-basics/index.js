@@ -97,6 +97,7 @@ app.get("/api/todos", (req, res) => {
 // http://localhost:9001/
 app.get("/", (req, res) => {
     // res.send("Hello client!!!!")
+    // res.sendFile(__dirname + "/public/index.html")
     res.sendFile(__dirname + "/public/index.html")
 })
 
