@@ -286,3 +286,46 @@ Author(1) -> Books(Many)
 
 
 - If the author gets deleted, all the books written by this deleted author should also be deleted
+
+
+
+
+# Topics to Revise
+- Async Calls - Promises, Async...Await
+- Set and Map
+- Events : Socket API
+- Spread / Rest
+- Closures & Callbacks
+- Function Hoisting
+- 
+
+# JS App runs on Single Thread only.
+- For all complex calculations/operations, which require time
+
+# Asynchronous : different thread
+- Higher Order Function - function that accepts another function as an argument is called HOF - 
+- Callback - vanilla JS - Function sent as argument to another function
+
+- Promise API - ES6
+    - Producer - produces the promises
+    - Consumer - consumes the promises using :
+        : then().catch()
+        : Async...await
+
+
+- Map : data storage; Stores data in key-value format; key can be of any type; are iterable.
+- Set : data storage; unique data; all API similar to Map; iterable;
+
+
+- Spread (...) : splits the collection into individual items;
+- Rest (...) : creates the collection from individual items; in function arguments; last argument;
+
+- Closure : process of binding outer scope variables with inner functions
+- Lexical Scoping and Scope chaining
+
+
+- JavaScript Engine runs in Two Phases
+: Creational Phase -> Memory is allocated
+: Executional Phase -> Program gets executed; Assignments (=)
+
+- Function Hoisting -> Functions takes place in memory at creational phase, hence they can be called from anywhere within scope.
