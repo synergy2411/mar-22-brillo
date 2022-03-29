@@ -1,9 +1,12 @@
 const AuthorModel = require("../model/author.model");
 const BookModel = require("../model/books.model");
+const CommentModel = require("../model/comment.model");
 
 const getAllAuthors = async (req, res) => {
   try {
-    const allAuthors = await AuthorModel.find().populate("books");
+    const allAuthors = await AuthorModel.find()
+      .populate("books")
+      .populate({ path: "comments", select: "body -_id" });
     return res.send(allAuthors);
   } catch (err) {
     console.log(err);
@@ -30,14 +33,18 @@ const deleteAuthor = async (req, res) => {
       try {
         let deletedUser = await AuthorModel.findByIdAndDelete(authorId);
         let deletedBooks = await BookModel.deleteMany({ creator: authorId });
-        // AuthorModel.deleteOne({_id : authorId})
-        return res.send({deleteUser : {...deletedUser}, deletedBooks : {...deletedBooks}})
+        let deletedComments = await CommentModel.deleteMany({ user: authorId });
+        return res.send({
+          deletedUser: { ...deletedUser._doc },
+          deletedBooks: { ...deletedBooks },
+          deletedComment : { ...deletedComments }
+        });
       } catch (err) {
         console.log(err);
         return res.send(err);
       }
-    }else{
-        return res.send({message : "Author does not exist"})
+    } else {
+      return res.send({ message: "Author does not exist" });
     }
   } catch (err) {
     console.log(err);
@@ -48,5 +55,5 @@ const deleteAuthor = async (req, res) => {
 module.exports = {
   getAllAuthors,
   createAuthor,
-  deleteAuthor
+  deleteAuthor,
 };

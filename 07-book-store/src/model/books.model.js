@@ -12,7 +12,11 @@ const booksSchema = new Schema({
     creator : {
         type : Schema.Types.ObjectId,
         ref : "Author"
-    }
+    },
+    comments : [{
+        type : Schema.Types.ObjectId,
+        ref : "Comment"
+    }]
 })
 
 const BookModel = model("Book", booksSchema);

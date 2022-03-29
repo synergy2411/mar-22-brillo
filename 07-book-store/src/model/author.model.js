@@ -11,6 +11,10 @@ const authorSchema = new Schema({
   books : [{
     type : Schema.Types.ObjectId,
     ref : "Book"
+  }],
+  comments : [{
+    type : Schema.Types.ObjectId,
+    ref : "Comment"
   }]
 });
 
