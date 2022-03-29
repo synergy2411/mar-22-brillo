@@ -281,3 +281,8 @@ Many to Many
 Book (1) -> Author (1)
 
 Author(1) -> Books(Many)
+
+
+
+
+- If the author gets deleted, all the books written by this deleted author should also be deleted
