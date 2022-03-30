@@ -3,7 +3,6 @@ require("./db");
 const UserModel = require("./model/user.model");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const { response } = require("express");
 
 const app = express();
 const SECRET_KEY = "MY_SUPER_SECRET_KEY";
@@ -16,8 +15,27 @@ app.get("/login", (req, res) => {
     res.sendFile(__dirname+"/public/login.html");
 })
 
-app.get("/user/profile", (req, res)=>{
-    res.sendFile(__dirname+"/public/profile.html")
+const ensureToken = (req, res, next) => {
+    const authHeader = req.headers.authorization;            // "Bearer token"
+    if(authHeader){
+        const token = authHeader.split(' ')[1]                                // ["Bearer", "token"]
+        if(token){
+            req.token = token;
+            return next();
+        }
+        return res.send({message : "Token NOT found"})
+    }
+    return res.send({message : "Auth Header not present"})
+}
+
+app.get("/user/profile", ensureToken, (req, res)=>{
+    jwt.verify(req.token, SECRET_KEY, (err, decode)=>{
+        if(err){
+            return res.send(err)
+        }
+        const {email} = decode;
+        return res.send({message : `Hello ${email}, You are visiting profile page`})
+    })
 })
 
 app.post("/user/login", async (req, res) => {
@@ -32,7 +50,7 @@ app.post("/user/login", async (req, res) => {
                         id : foundUser._id,
                         email : email
                     }, SECRET_KEY)
-                    return res.send({message : "SUCCESS", status : 200, token : token})
+                    return res.send({message : "SUCCESS", token : token}).status(200)
                 }catch(err){
                     console.log(err);
                     return res.send(err)
@@ -50,15 +68,20 @@ app.post("/user/login", async (req, res) => {
 })
 
 app.post("/signup", async (req, res) => {
-    const {password} = req.body;
+    const {email, password} = req.body;
     try{
-        const hashedPassword = await bcrypt.hash(password, 12);
-        const user = new UserModel({...req.body, password : hashedPassword})    // {email : "", password :""}
-        const createdUser = await user.save()
-        return res.send({
-            message  :"User created successfully", 
-            id : createdUser._id
-        })
+        const foundUser = await UserModel.findOne({email});
+        if(foundUser){
+            return res.send({message : "Email already exists"})
+        }else{
+            const hashedPassword = await bcrypt.hash(password, 12);
+            const user = new UserModel({...req.body, password : hashedPassword})    // {email : "", password :""}
+            const createdUser = await user.save()
+            return res.send({
+                message  :"User created successfully", 
+                id : createdUser._id
+            })
+        }
     }catch(err){
         console.log(err);
         return res.send(err);
