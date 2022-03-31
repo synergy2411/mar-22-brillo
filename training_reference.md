@@ -351,3 +351,19 @@ Author(1) -> Books(Many)
 > npm i dotenv
 > require("dotenv").config()
 > process.env
+
+
+# 60 Minutes Challenge (04:00-5:00)
+
+# Step 0
+- Create the User Model with username, email, password, age
+
+# Step 01
+- Create register Route -> 
+    > POST -> http://localhost:9090/users/register 
+        - username, password, email, age
+        - Stored in MongoDB
+
+# Step 02
+- Authenticate the User when user login (username, password)
+    -> if user is authenticated, then assign the token

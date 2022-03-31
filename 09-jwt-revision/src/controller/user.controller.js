@@ -7,6 +7,7 @@ const userLogin = (req, res) => {
   const { username, password } = req.body;
   if (username && password) {
     // assuming user is authenticated user
+    // Need to verify the email and password form Database, before sending the token
     const token = jwt.sign({ username, password }, MY_SECRET);
     return res.send({ token: token, message: "Logged-in successfully" });
   } else {
