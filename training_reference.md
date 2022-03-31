@@ -332,3 +332,16 @@ Author(1) -> Books(Many)
 
 
 > npm i express mongoose jsonwebtoken
+
+
+
+# Middleware understanding
+- Simple Function
+- Will receive request, response and next() as parameter
+- Calling next(), will transfer the control to the next middleware
+- Middlewares execute in the order, they register with app
+- If any middleware send back the respsonse, following middleware will not execute
+- Can attach one or more middleare ith one route
+- Two Types of middleware
+: applicable for complete Application -> app.use(middlewareName)
+: applicable for one Route only -> app.get("/route", middleware1, middleware2 ....)
