@@ -345,3 +345,9 @@ Author(1) -> Books(Many)
 - Two Types of middleware
 : applicable for complete Application -> app.use(middlewareName)
 : applicable for one Route only -> app.get("/route", middleware1, middleware2 ....)
+
+
+# Load Environment Variables
+> npm i dotenv
+> require("dotenv").config()
+> process.env
