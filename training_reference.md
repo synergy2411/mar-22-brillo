@@ -365,7 +365,7 @@ Author(1) -> Books(Many)
         - Stored in MongoDB
 
 # Step 02
-- Authenticate the User when user login (username, password)
+- Authenticate the User when user login (email, password)
     -> if user is authenticated, then assign the token
 
 
@@ -376,3 +376,15 @@ Author(1) -> Books(Many)
 02:00 - 3:00 (Session)
 03:00 - 5:30 (Meeting / break)
 5:30 onwards (weekly assignment / evening standup)
+
+
+# View / template Engine
+- Generate the template / View dynamically
+- Reuse the Code e.g using header/footer/side on multiple pages
+- Server-Side Rendering
+- Syntax supported by Node -
+: Jade/Pug -> whitespaces and indentation
+: Handlebars
+: EJS
+: Vash
+

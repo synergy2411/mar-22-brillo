@@ -1,0 +1,18 @@
+{
+  "name": "11-express-handlebars",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "SumitK",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.3",
+    "handlebars": "^4.7.7",
+    "hbs": "^4.2.0"
+  }
+}
