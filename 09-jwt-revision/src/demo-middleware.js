@@ -27,4 +27,4 @@ app.get("/api", middleware1, middleware2, middleware3, (req, res)=>{
 })
 
 
-app.listen(9090, () => console.log(`Server started at PORT : 9090`))
+app.listen(9090, () => console.log(`Server started at PORT : 9090`)) 

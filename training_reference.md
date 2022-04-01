@@ -367,3 +367,12 @@ Author(1) -> Books(Many)
 # Step 02
 - Authenticate the User when user login (username, password)
     -> if user is authenticated, then assign the token
+
+
+09:30 - 11:30 (Session)
+11:30 - 11:45 (break)
+11:45 - 1:00 (Session)
+01:00 - 2:00 (Meeting / lunch)
+02:00 - 3:00 (Session)
+03:00 - 5:30 (Meeting / break)
+5:30 onwards (weekly assignment / evening standup)
