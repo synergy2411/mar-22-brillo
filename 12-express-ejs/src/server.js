@@ -9,8 +9,10 @@ app.set('layout', './layouts/layout');
 app.set("view engine", "ejs");
 
 app.get("/views/welcome", (req, res) => {
+    //const allPost =  PostModel.find()
     res.render("welcome", {
-        username : "asfiya"
+        username : "asfiya",
+        posts : allPosts
     });
 })
 app.get("/views/login", (req, res) => {

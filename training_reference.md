@@ -388,3 +388,9 @@ Author(1) -> Books(Many)
 : EJS
 : Vash
 
+
+
+# Weekend task
+- Fetch the Post data from MongoDB
+- Populate it in template
+- Display the post collections on the UI/View/template
