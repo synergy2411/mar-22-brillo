@@ -13,5 +13,8 @@ app.get("/views/welcome", (req, res) => {
         username : "asfiya"
     });
 })
+app.get("/views/login", (req, res) => {
+    res.render("login");
+})
 
 app.listen(9090, () => console.log("Server Started at PORT : 9090"))
