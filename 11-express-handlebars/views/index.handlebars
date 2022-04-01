@@ -1,7 +1,4 @@
 
-{{> "header"}}
-
-
 <h3>Welcome {{username}}! You are {{age}} years old. </h3>
 
 <h4>My Friends -</h4>
@@ -9,7 +6,7 @@
 {{#if haveFriends}}
   <ul>
     {{#each friends}}
-      <li>{{this}}</li>
+      <li>{{showInUpperCase this}}</li>
     {{/each}}
   </ul>
   {{else}}

@@ -13,7 +13,10 @@ app.get("/views/index", (req, res) => {
         username : "Varsha",
         age :  23,
         friends : ["sarthak", "kajal", "shrusti"],
-        haveFriends : false
+        haveFriends : true,
+        helpers : {
+            showInUpperCase : (val) => val.toUpperCase()
+        }
     });
 })
 
