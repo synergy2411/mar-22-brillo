@@ -11,10 +11,12 @@ app.use(express.static(__dirname+"/public"));
 // Socket library trigger the 'connection' event for evey new client connected
 io.on("connection", (socket) => {
     console.log("Client Connected...");
-    socket.emit("acknowledgement", {message : "You are connected now."})
-    socket.on("thanks", message => console.log(message))
-    socket.on("toServer", data => {
-        console.log("CLient says : " + data.message)
+    // socket.emit("acknowledgement", {message : "You are connected now."})
+    // socket.on("thanks", message => console.log(message))
+    socket.on("toServer", ({chatterName, message}) => {
+        console.log(chatterName  + " says : " + message);
+        socket.emit("toClient", {message, chatterName : "Me"})
+        socket.broadcast.emit("toClient", {message, chatterName})
     })
 })
 
