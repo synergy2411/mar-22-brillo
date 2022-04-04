@@ -436,6 +436,11 @@ authors, books
 authorName, authorAge, bookTitle, bookISBN, commentText
 
 
+# Scalar Types
+- String
+- Int
+- Boolean
+- ID
 
 
 # REST Endpoints
