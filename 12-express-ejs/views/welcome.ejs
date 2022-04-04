@@ -1,2 +1,13 @@
-<h1>Welcome <%= username.toUpperCase() %>  !</h1>
+<h1>Welcome User !</h1>
 
+<div class="row">
+    <% posts.forEach(post => { %>
+    <div class="col-4 text-center" >
+        <div class="card my-card">
+            <div class="card-header">
+                <%- post.title.toUpperCase() %>        
+            </div>
+        </div>
+    </div>
+    <% }) %>
+</div>

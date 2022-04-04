@@ -1,0 +1,10 @@
+.my-card{
+    box-shadow: 2px;
+    margin-top: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.my-card:hover{
+    cursor: pointer;
+    background-color: beige;
+}

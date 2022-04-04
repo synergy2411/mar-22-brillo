@@ -1,22 +1,17 @@
 const express = require("express");
 const ejs = require("ejs");
+require("./db");
 const expEjsLayouts = require("express-ejs-layouts");
+const PostRouter = require("./router/posts.routes");
 
 const app = express();
 
+
+app.use(express.static(__dirname+'/public'))
 app.use(expEjsLayouts);
 app.set('layout', './layouts/layout');
 app.set("view engine", "ejs");
 
-app.get("/views/welcome", (req, res) => {
-    //const allPost =  PostModel.find()
-    res.render("welcome", {
-        username : "asfiya",
-        posts : allPosts
-    });
-})
-app.get("/views/login", (req, res) => {
-    res.render("login");
-})
+app.use("/views", PostRouter)
 
 app.listen(9090, () => console.log("Server Started at PORT : 9090"))

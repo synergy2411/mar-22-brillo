@@ -394,3 +394,9 @@ Author(1) -> Books(Many)
 - Fetch the Post data from MongoDB
 - Populate it in template
 - Display the post collections on the UI/View/template
+
+
+# MVC Pattern
+M - Model : Data available in app
+V - View : to display the data on User Interface (UI) / browser / View / Template
+C - Controller : applying the business logic
