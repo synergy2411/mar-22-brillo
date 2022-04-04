@@ -400,3 +400,16 @@ Author(1) -> Books(Many)
 M - Model : Data available in app
 V - View : to display the data on User Interface (UI) / browser / View / Template
 C - Controller : applying the business logic
+
+
+
+# Practice Assignment - Control Flow
+Step 01-
+> Creating Login Page
+Step 02-
+> On Login Button Click, you need to verify the user from DB, assign the JWT token to the User
+Step 03-
+> if User is NOT authenticated, then redirect the user to Login Page
+Step 04- 
+> if user is authenticated, then redirect the user to Welcome Page after token verification
+

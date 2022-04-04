@@ -14,4 +14,6 @@ app.set("view engine", "ejs");
 
 app.use("/views", PostRouter)
 
+app.use("/redirect", (req, res) => {res.redirect("/views/welcome")})
+
 app.listen(9090, () => console.log("Server Started at PORT : 9090"))
