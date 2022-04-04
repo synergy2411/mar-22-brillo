@@ -413,3 +413,34 @@ Step 03-
 Step 04- 
 > if user is authenticated, then redirect the user to Welcome Page after token verification
 
+
+
+# What is GraphQL?
+- specifications
+- Single endpoint
+: Queries - fetch the data
+: Mutations - create / delete / update the data
+
+# Why GraphQL?
+- No Under-fetching
+- No Over-fetching
+- Get the exact data that your app needed
+- Relational Data (Authors, Posts, Comments)
+
+
+authors, books
+/authors -> authors record -> _id, name, age, address, experience etc
+/books -> books recored -> _id, title, published, total_page, isbn etc
+/comments -> comments Record -> _id, text
+
+authorName, authorAge, bookTitle, bookISBN, commentText
+
+
+
+
+# REST Endpoints
+GET - /todos - to get all todos
+POST - /todos - create new item
+DELETE - /todos/{id} - to delete the item
+PATCH - /tods/{id} - to update the item
+
