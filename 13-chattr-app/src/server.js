@@ -5,8 +5,11 @@ const server = http.createServer(app);
 // const nestedFn = require("socket.io");
 // const io = nestedFn(server);
 const io = require("socket.io")(server)
+require("./db");
+const ChatModel = require("./model/chats.model");
 
 app.use(express.static(__dirname+"/public"));
+const messageStack = [];
 
 // Socket library trigger the 'connection' event for evey new client connected
 io.on("connection", (socket) => {
@@ -17,6 +20,17 @@ io.on("connection", (socket) => {
         console.log(chatterName  + " says : " + message);
         socket.emit("toClient", {message, chatterName : "Me"})
         socket.broadcast.emit("toClient", {message, chatterName})
+        messageStack.push(message)
+    })
+
+    socket.on("disconnect", async ()=>{
+        try{
+            const chatData = new ChatModel({chatterName : socket.id, messages : messageStack})
+            const savedChats = await chatData.save()
+            console.log(savedChats)
+        }catch(err){
+            console.log(err)
+        }
     })
 })
 
