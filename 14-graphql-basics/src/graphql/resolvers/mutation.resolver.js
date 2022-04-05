@@ -2,13 +2,13 @@ let { users, posts, comments } = require("../../db/data");
 const { v4 } = require("uuid");
 
 module.exports = {
-  createUser: (args) => {
+  createUser: (args, req, info) => {
     const { name, age } = args.data;
     const newUser = { id: v4(), name, age };
     users.push(newUser);
     return newUser;
   },
-  createPost: ({ data }) => {
+  createPost: ({ data }, req) => {
     const { title, body, authorId } = data;
     const foundUser = users.find((user) => user.id === authorId);
     if (foundUser) {

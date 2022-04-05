@@ -453,6 +453,7 @@ PATCH - /tods/{id} - to update the item
 > npm i express graphql express-graphql
 
 
+# Task of the day -
 
 - Deleting User
 : Posts created by User should be deleted
@@ -463,3 +464,5 @@ PATCH - /tods/{id} - to update the item
 - Implement Update Operation
 : updatePost(id : ID!, data : UpdatePostInput)
 : updateComment(id : ID!, data : UpdateCommentInput)
+
+- Integrate MongoDB with GraphQL
