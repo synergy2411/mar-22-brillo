@@ -456,5 +456,10 @@ PATCH - /tods/{id} - to update the item
 
 - Deleting User
 : Posts created by User should be deleted
-: Comments created by user should be deleted
+: Comments created by other users on the Post should also be deleted
+: Comments created by same user should be deleted
 : User should be deleted
+
+- Implement Update Operation
+: updatePost(id : ID!, data : UpdatePostInput)
+: updateComment(id : ID!, data : UpdateCommentInput)
