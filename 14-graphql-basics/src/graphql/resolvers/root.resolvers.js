@@ -1,12 +1,12 @@
 const { users, posts, comments } = require("../../db/data");
 module.exports = {
   authors: () => {
-      const userWithPosts = users.map(user => {
+      const userWithPostsAndComments = users.map(user => {
          const userPosts =  posts.filter(post => post.author === user.id)
          const userComments = comments.filter(comment => comment.creator === user.id)
          return {...user, posts : userPosts, comments : userComments}
       })
-      return userWithPosts;
+      return userWithPostsAndComments;
   },
   author: (params) => {
     const foundUser = users.find((user) =>
@@ -18,17 +18,19 @@ module.exports = {
     return new Error("User not found for name - " + params.name);
   },
   posts : () => {
-      const postWithUser = posts.map(post => {
-          const foundUser = users.find(user => user.id === post.author)
-            return {...post, author : foundUser}
+      const postWithUserAndComments = posts.map(postEl => {
+          const foundUser = users.find(user => user.id === postEl.author)
+          const postWithComments = comments.filter(comment => comment.post === postEl.id)
+            return {...postEl, author : foundUser, comments : postWithComments}
         })
-      return postWithUser;
+      return postWithUserAndComments;
   },
   comments : () => {
-      const commentWithUser = comments.map(comment => {
+      const commentWithUserAndPost = comments.map(comment => {
           const foundUser = users.find(user => user.id === comment.creator)
-          return {...comment, creator : foundUser}
+          const foundPost = posts.find(post => post.id === comment.post)
+          return {...comment, creator : foundUser, post : foundPost}
       })
-      return commentWithUser;
+      return commentWithUserAndPost;
   }
 };

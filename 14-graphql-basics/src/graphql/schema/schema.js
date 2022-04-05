@@ -19,10 +19,12 @@ type Post {
     body : String!
     published: Boolean!
     author : Author!
+    comments : [Comment!]!
 }
 type Comment {
   id : ID!
   text : String!
   creator : Author!
+  post: Post
 }
 `);
