@@ -416,6 +416,7 @@ Step 04-
 
 
 # What is GraphQL?
+- language independent
 - specifications
 - Single endpoint
 : Queries - fetch the data
@@ -449,3 +450,4 @@ POST - /todos - create new item
 DELETE - /todos/{id} - to delete the item
 PATCH - /tods/{id} - to update the item
 
+> npm i express graphql express-graphql
