@@ -6,6 +6,11 @@ type Mutation {
   createComment(data : CreateCommentInput) : Comment!
   deleteComment(id : ID!) : Comment!
   deletePost(id : ID!) : Post!
+  updateUser(id : ID!, data : UpdateUserInput ) : Author!
+}
+input UpdateUserInput{
+  name : String
+  age : Int
 }
 input CreateCommentInput{
   text : String!

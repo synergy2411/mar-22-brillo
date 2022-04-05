@@ -97,5 +97,19 @@ module.exports = {
       const position = posts.findIndex(p=> p.id === id)
       const deletedPost = posts.splice(position, 1)
       return deletedPost[0]
+  },
+  updateUser : ({id, data}) => {
+    const position = users.findIndex(u => u.id === id)
+    if(position >= 0){
+      const { name, age } = data;
+      if(name){
+        users[position].name = name;
+      }
+      if(age){
+        users[position].age = age
+      }
+      return users[position];
+    }
+    throw new Error("Unable to find User - " + id)
   }
 };

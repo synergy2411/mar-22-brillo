@@ -451,3 +451,10 @@ DELETE - /todos/{id} - to delete the item
 PATCH - /tods/{id} - to update the item
 
 > npm i express graphql express-graphql
+
+
+
+- Deleting User
+: Posts created by User should be deleted
+: Comments created by user should be deleted
+: User should be deleted
