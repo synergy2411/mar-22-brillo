@@ -36,10 +36,10 @@ const posts = [
 ];
 
 const comments = [
-    {id : "C101", text : "I Loved it", creator : "A003", post : "P001"},
-    {id : "C102", text : "I liked it", creator : "A003", post : "P002"},
-    {id : "C103", text : "it was nice", creator : "A002", post : "P001"},
-    {id : "C104", text : "some awesome comment", creator : "A001", post : "P003"},
-] 
+  { id: "C101", text: "I Loved it", creator: "A003", post: "P001" },
+  { id: "C102", text: "I liked it", creator: "A003", post: "P002" },
+  { id: "C103", text: "it was nice", creator: "A002", post: "P001" },
+  { id: "C104", text: "some awesome comment", creator: "A001", post: "P003" },
+];
 
 module.exports = { users, posts, comments };
