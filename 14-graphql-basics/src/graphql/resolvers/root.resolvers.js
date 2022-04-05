@@ -1,4 +1,6 @@
 const { users, posts, comments } = require("../../db/data");
+const { v4 } = require("uuid")
+
 module.exports = {
   authors: () => {
     const userWithPostsAndComments = users.map((user) => {
@@ -36,5 +38,11 @@ module.exports = {
       return { ...comment, creator: foundUser, post: foundPost };
     });
     return commentWithUserAndPost;
+  },
+  createUser: (args) => {
+    const { name, age } = args;
+    const newUser = {id : v4(), name, age };
+    users.push(newUser)
+    return newUser;
   },
 };
