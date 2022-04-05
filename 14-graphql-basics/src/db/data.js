@@ -1,10 +1,10 @@
-const users = [
+let users = [
   { id: "A001", name: "John Doe", age: 32 },
   { id: "A002", name: "Jenny Doe", age: 33 },
   { id: "A003", name: "James Doe", age: 34 },
 ];
 
-const posts = [
+let posts = [
   {
     id: "P001",
     title: "Awesome post",
@@ -35,7 +35,7 @@ const posts = [
   },
 ];
 
-const comments = [
+let comments = [
   { id: "C101", text: "I Loved it", creator: "A003", post: "P001" },
   { id: "C102", text: "I liked it", creator: "A003", post: "P002" },
   { id: "C103", text: "it was nice", creator: "A002", post: "P001" },

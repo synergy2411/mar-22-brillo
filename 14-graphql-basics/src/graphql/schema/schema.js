@@ -5,6 +5,7 @@ type Mutation {
   createPost(data : CreatePostInput) : Post!
   createComment(data : CreateCommentInput) : Comment!
   deleteComment(id : ID!) : Comment!
+  deletePost(id : ID!) : Post!
 }
 input CreateCommentInput{
   text : String!
