@@ -1,7 +1,24 @@
 const { buildSchema } = require("graphql");
 module.exports = buildSchema(`
 type Mutation {
-  createUser(name : String!, age : Int!) : Author!
+  createUser(data : CreateUserInput) : Author!
+  createPost(data : CreatePostInput) : Post!
+  createComment(data : CreateCommentInput) : Comment!
+  deleteComment(id : ID!) : Comment!
+}
+input CreateCommentInput{
+  text : String!
+  postId : ID!
+  authorId : ID!
+}
+input CreatePostInput{
+  title : String!
+  body : String!
+  authorId : ID!
+}
+input CreateUserInput {
+  name : String!
+  age : Int!
 }
 type Query {
   author(name: String): Author!
