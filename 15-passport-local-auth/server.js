@@ -12,8 +12,8 @@ app.use(cookieSession({
     keys : ["MyCookieSecretKey"]
 }))
 
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.initialize());                 // initial passport to use express app
+app.use(passport.session());                    // Express session used by passport
 
 app.use(express.urlencoded({extended : false}));            // Populate the Request body from Form Data
 

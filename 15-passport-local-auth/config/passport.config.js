@@ -24,7 +24,7 @@ passport.use(new LocalStrategy(async (username, password, done) => {
         if(foundUser){
             return done(null, foundUser)
         }else{
-            return done( "User not found")
+            return done("User not found")
         }
     }catch(err){
         return done(err)
