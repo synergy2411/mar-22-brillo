@@ -466,3 +466,25 @@ PATCH - /tods/{id} - to update the item
 : updateComment(id : ID!, data : UpdateCommentInput)
 
 - Integrate MongoDB with GraphQL
+
+
+# Why Passport?
+- to Authenticate User by various strategies
+- more than 500+ startegies available
+- based on session
+- connect-style middleware (well integrated with Express App)
+- more declarative
+- flexiable
+
+- Configuration is bit complex 
+
+
+# Local Strategy : username and password
+
+# OAuth Strategy -> Open Authentication
+-> Google
+-> Facebook
+-> Twitter 
+-> LinkedIn
+
+
