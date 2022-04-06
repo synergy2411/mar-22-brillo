@@ -488,3 +488,7 @@ PATCH - /tods/{id} - to update the item
 -> LinkedIn
 
 
+# Cookie -> 
+- Small files
+- Maintain the session
+- Sent by the server to the client

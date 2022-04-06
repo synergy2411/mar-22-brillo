@@ -10,7 +10,7 @@ const onRegister = async (req, res ) => {
     }
 }
 
-const onLogin = async (req, res) => {
+const onLogin = (req, res) => {
     res.redirect("/views/profile")
 }
 
