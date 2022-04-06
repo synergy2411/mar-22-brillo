@@ -10,7 +10,9 @@ const onRegister = async (req, res ) => {
     }
 }
 
-const onLogin = async (req, res ) => {}
+const onLogin = async (req, res) => {
+    res.redirect("/views/profile")
+}
 
 module.exports = { onRegister, onLogin }
 

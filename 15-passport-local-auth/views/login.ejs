@@ -4,6 +4,24 @@
     <title>User Login</title>
 </head>
 <body>
-    <h1>Login Form coming soon...</h1>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/views/register">Register</a></li>
+        <li><a href="/views/login">Login</a></li>
+    </ul>
+    
+    <h1>Login Form </h1>
+    <form action="/auth/login" method="POST">
+        <!-- username -->
+        <label for="username">Username : </label>
+        <input type="text" name="username" id="username" />
+        <br />
+        <!-- password -->
+        <label for="password">Password :</label>
+        <input type="password" name="password" id="password" />
+        <br/>
+        <!-- button -->
+        <button type="submit">Login</button>
+    </form>
 </body>
 </html>
