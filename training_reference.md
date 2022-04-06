@@ -492,3 +492,10 @@ PATCH - /tods/{id} - to update the item
 - Small files
 - Maintain the session
 - Sent by the server to the client
+
+
+# Google Redirect URI
+http://localhost:9000/auth/redirect
+
+client ID - 923681364401-uuk2vn6c9j2221hfqb8dnglpe362bier.apps.googleusercontent.com
+client secret - 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

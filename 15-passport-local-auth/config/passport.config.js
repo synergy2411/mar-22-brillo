@@ -4,12 +4,10 @@ const UserModel = require("../model/user.model");
 
 // Use the Cookie Session and encypt the Cookie with user.id
 passport.serializeUser((user, done) => {
-    console.log("[SERAILIZE]", user)
     return done(null, {id : user.id})
 })
 // Decode the cookie and get the user.id from it
 passport.deserializeUser(async({id}, done) => {
-    console.log("[DESERAILIZE]", id)
     try{
         const userFound = await UserModel.findById(id)
         done(null, userFound)
