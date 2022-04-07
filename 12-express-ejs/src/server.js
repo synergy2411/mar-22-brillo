@@ -5,6 +5,7 @@ require("./db");
 const expEjsLayouts = require("express-ejs-layouts");
 const PostRouter = require("./router/posts.routes");
 const AdminModel = require("./model/admin.model");
+const PostModel = require("./model/posts.model");
 
 const app = express();
 app.use(express.urlencoded({extended : false}))         // parse form data and attach it with req.body
@@ -18,14 +19,15 @@ app.set("view engine", "ejs");
 app.post("/auth/login", async (req, res) => {
     const { email, password } = req.body;
    try {
-       const foundUser = await AdminModel.findOne({email})
+       const foundUser = await AdminModel.findOne({email,password})
        if(foundUser){
-        
+        const token = jwt.sign({id : foundUser._id.toString()},"Secret")
         return res.send({token, message : "SUCCESS"})
        }else{
         return res.send({message : "Unable to find user"})
        }
    } catch (error) {
+       console.log(error)
     return res.send(error)
    }
 })
@@ -42,8 +44,22 @@ const ensureToken = (req, res, next) => {
 }
 
 app.get("/user/posts", ensureToken, (req, res) => {
-    console.log("Token ", req.token);
-    return res.send([{id:"P01", title :"Routing is great", body:"..."}])
+    jwt.verify(req.token, "Secret", async (err, decode)=>{
+        if(err){
+            console.log(err);
+            return res.send(err);
+        }
+        const { id } = decode;
+        console.log("ID -> ", id)
+        try {
+            const posts = await PostModel.find({admin : id})
+            console.log("POSTS -> ", posts)
+            return res.send(posts)
+        } catch (error) {
+            console.log(error)
+            return res.send({error})
+        }
+    })
 })
 
 app.use("/views", PostRouter)

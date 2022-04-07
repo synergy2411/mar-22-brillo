@@ -2,10 +2,7 @@ const PostModel = require("../model/posts.model")
 
 const getPosts = async (req, res) => {
     try{
-        const allPosts = await PostModel.find()
-        return res.render("welcome", {
-            posts : allPosts
-        })
+        return res.render("welcome")
     }catch(err){
         return res.render("not-found", { err })
     }

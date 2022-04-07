@@ -14,7 +14,7 @@ const postSchema = new Schema({
         default : false
     },
     admin : {
-        type : Schema.Types.ObjectId,
+        type : Schema.Types.String,
         required : true,
         ref : "Admin"
     }

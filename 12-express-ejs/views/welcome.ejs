@@ -1,19 +1,9 @@
 <h1>Welcome User !</h1>
 
 <button id="btnGetPost" type="button">Get Posts</button>
+ 
+<hr>
 
-
-<div class="row">
-    <% posts.forEach(post => { %>
-    <div class="col-4 text-center" >
-        <div class="card my-card">
-            <div class="card-header">
-                <%- post.title.toUpperCase() %>        
-            </div>
-        </div>
-    </div>
-    <% }) %>
-</div>
-
+<ul id="post-list"></ul>
 
 <script src="/scripts/getPosts.js"></script>
