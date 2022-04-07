@@ -1,5 +1,6 @@
 const express = require("express");
 const { getPosts, onLogin } = require("../controller/post.controller");
+const { ensureToken } = require("../middleware/ensureToken");
 
 const router = express.Router();
 

@@ -12,6 +12,11 @@ const postSchema = new Schema({
     published : {
         type : Schema.Types.Boolean,
         default : false
+    },
+    admin : {
+        type : Schema.Types.ObjectId,
+        required : true,
+        ref : "Admin"
     }
 })
 
