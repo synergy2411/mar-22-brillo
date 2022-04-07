@@ -38,7 +38,7 @@ app.get("/user/profile", ensureToken, (req, res)=>{
     })
 })
 
-app.post("/user/login", async (req, res) => {
+app.post("/login", async (req, res) => {
     const { email, password } = req.body;
     try{
         const foundUser = await UserModel.findOne({email : email});

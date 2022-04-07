@@ -8,7 +8,7 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async ({id}, done) => {
     const userFound = await ProfileModel.findById(id)
-    done(null, userFound)
+    done(null, userFound)               // attach the user with request object -> req.user
 })
 
 passport.use(new GoogleStrategy({

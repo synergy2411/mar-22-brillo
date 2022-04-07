@@ -1,0 +1,19 @@
+{
+  "name": "14-graphql-basics",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "SumitK",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.3.0",
+    "mongoose": "^6.2.10",
+    "uuid": "^8.3.2"
+  }
+}
