@@ -499,3 +499,42 @@ http://localhost:9000/auth/redirect
 
 client ID - 923681364401-uuk2vn6c9j2221hfqb8dnglpe362bier.apps.googleusercontent.com
 client secret - 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
+
+
+
+
+# What is Testing ?
+- product match the user requirement
+- testing particular unit
+- project testing before deployment
+- proper functioning of code
+- code working without error
+- checking for bugs
+- expecting the code against certain criteria
+
+sum(n1,n2) => n1 + n2;
+
+sum(4,2) => 6
+
+- TDD : Test Driven Development
+    - Write Test
+    - Test will Fail
+    - Write the code
+    - Test Pass
+- BDD : Behaviour Driven Development
+    - Should return addition of given two numbers
+
+Mocha : Testing framework for JavaScript Apps
+    - Specs
+    - Suites
+    - Test statements
+    - Setup and teardown
+
+Chai : Assertion Library
+    - expect
+    - matchers
+
+Assert : Core Module of NodeJS
+
+# To install Mocha
+-> npm i mocha -g
