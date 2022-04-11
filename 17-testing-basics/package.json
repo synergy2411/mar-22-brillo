@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "SumitK",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.6"
+  }
 }
