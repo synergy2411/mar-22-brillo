@@ -48,5 +48,18 @@ describe.only("Todo App", () => {
     })
 
     // delete
+    it("Should delete item based on ID - /api/todos/:id", () => {
+        const todo = new TodoModel({label : "insurance", status : true})
+        todo.save().then(response => {
+            chai.request(server)
+                .delete("/api/todos/"+response._id)
+                .end((err, res) => {
+                    if(err) console.log(err);
+                    expect(res.body).not.to.be.undefined;
+                    expect(res.body._id.toString()).to.equal(response._id.toString())
+                    expect(res.body.label).to.be.equal("insurance")
+                })
+        }).catch(console.log)
+    })
     // patch
 })

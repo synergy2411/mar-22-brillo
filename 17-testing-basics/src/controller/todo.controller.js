@@ -32,4 +32,14 @@ const getTodoById = async(req, res) => {
     }
 }
 
-module.exports = { getAllTodos, createTodo, getTodoById }
+const deleteTodoById = async(req, res) => {
+    try {
+        const { id } = req.params;
+        const deletedItem = await TodoModel.findByIdAndDelete(id)
+        return res.send(deletedItem)
+    } catch (error) {
+        return res.send(error)
+    }
+}
+
+module.exports = { getAllTodos, createTodo, getTodoById, deleteTodoById }
