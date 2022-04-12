@@ -553,3 +553,36 @@ Assert : Core Module of NodeJS
 - afterEach()
 - beforeAll()
 - afterAll()
+
+
+
+# Steps for App Deployment on Heroku
+- Create your account on heroku (it's free)
+- Create your account on github (it's free)
+- Download git bash (https://git-scm.com/)
+- Download heroku CLI tool -> 
+    > npm i heroku -g
+    > heroku --version
+- Migrate Local MongoDB to Cloud Version of MongoDB (Mongo Atlas)
+    > Use gmail credentials to login on https://cloud.mongodb.com/
+    > Password - JZyjrzkyrNxmKavG Username - brillian
+    > SRV - mongodb+srv://brillian:JZyjrzkyrNxmKavG@cluster0.e9xsq.mongodb.net/brillio-db?retryWrites=true&w=majority
+- Adjust your App to incorporate Cloud Changes
+    > change the "start" script in package.json
+    > update/change the PORT number
+    > index.html Page
+- Generate SSH key
+    > open git bash -> ssh-keygen
+- Create the Git Repo and upload the project
+        git init
+        git add .
+        git commit -m "first commit"
+        git branch -M main
+        git remote add origin https://github.com/synergy2411/todos-app.git
+        git push -u origin main
+- Login on Heroku via heroku CLI
+    > heroku login
+    > heroku keys:add
+    > heroku create sk-brillio-todo-app [unique project name]
+    > git remote
+    > git push heroku main
