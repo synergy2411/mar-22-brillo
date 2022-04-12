@@ -1,4 +1,4 @@
-const { getAllTodos, createTodo, getTodoById, deleteTodoById } = require("../controller/todo.controller");
+const { getAllTodos, createTodo, getTodoById, deleteTodoById, updateTodoById } = require("../controller/todo.controller");
 
 const router = require("express").Router();
 
@@ -9,5 +9,6 @@ router.route("/")
 router.route("/:id")
     .get(getTodoById)
     .delete(deleteTodoById)
+    .patch(updateTodoById)
 
 module.exports = router;

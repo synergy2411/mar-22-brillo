@@ -538,3 +538,18 @@ Assert : Core Module of NodeJS
 
 # To install Mocha
 -> npm i mocha -g
+
+# to install Chai
+-> npm i chai
+-> npm i chai-http
+
+# AAA Pattern
+- Arrange
+- Act
+- Assert
+
+# Setup and Teardown 
+- beforeEach()
+- afterEach()
+- beforeAll()
+- afterAll()

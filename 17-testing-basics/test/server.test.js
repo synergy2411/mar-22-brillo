@@ -62,4 +62,21 @@ describe.only("Todo App", () => {
         }).catch(console.log)
     })
     // patch
+
+    it("Should update todo based on ID - /api/todos/:id", () => {
+        const todo = new TodoModel({label : "grocery", status : false})
+        todo.save()
+            .then(response=>{
+                chai.request(server)
+                    .patch("/api/todos/"+response._id)
+                    .send({status : true})
+                    .end((err, res )=>{
+                        if(err) console.log(err)
+                        expect(res.body).not.to.be.undefined;
+                        expect(res.body._id.toString()).not.to.be.undefined;
+                        expect(res.body.status).to.be.true;
+                    })
+            })
+            .catch(console.log)
+    })
 })
