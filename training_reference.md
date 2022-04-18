@@ -586,3 +586,29 @@ Assert : Core Module of NodeJS
     > heroku create sk-brillio-todo-app [unique project name]
     > git remote
     > git push heroku main
+
+- CI/CD : Continous Integration / Continuous Deployment
+    > git add .
+    > git commit -m "new commit"
+    > git push
+    > git push heroku main
+
+
+
+# IP & CIDR
+
+192.168.100.101/32 -> 1 IP -> 192.168.100.101
+192.168.100.101/31 -> 2 IP -> 192.168.100.101 / 192.168.100.102
+192.168.100.101/30 -> 4 IP -> 192.168.100.101 / 192.168.100.102 / 192.168.100.103 /192.168.100.104
+192.168.100.101/29 -> 8 IP -> 19.168.100.101 ...... 192.168.100.108
+
+192.168.100.101
+192.168.100.102
+192.168.100.103
+192.168.100.104
+
+
+CIDR : 192.168.100.101/29
+
+
+0.0.0.0/0 -> all the IPs / any number of IPs
