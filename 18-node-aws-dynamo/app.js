@@ -2,8 +2,8 @@ const { DynamoDB, config } = require("aws-sdk");
 
 config.update({
     region : "ap-south-1",
-    accessKeyId : "AKIAWO4YIMN7OL7EN625",
-    secretAccessKey : "bS1KOTW5KkgPYeJG8SVHdhZDJJ0CTF0dQ6CfHnqH"
+    accessKeyId : "YourAccessKeyID",
+    secretAccessKey : "YourSecretAccessKey"
 })
 
 const docClient = new DynamoDB.DocumentClient()
